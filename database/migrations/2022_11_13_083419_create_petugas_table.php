@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_petugas');
             $table->string('nomor_petugas');
+            $table->string('nama_petugas');
             $table->string('tugas_petugas');
             $table->date('tanggal_lahir');
             $table->integer('umur_petugas');
