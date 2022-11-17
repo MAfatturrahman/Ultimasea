@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Title
@@ -17,7 +16,6 @@ return [
     'title' => 'Ultimasea',
     'title_prefix' => '',
     'title_postfix' => '',
-
     /*
     |--------------------------------------------------------------------------
     | Favicon
@@ -32,7 +30,6 @@ return [
 
     'use_ico_only' => false,
     'use_full_favicon' => false,
-
     /*
     |--------------------------------------------------------------------------
     | Google Fonts
@@ -50,7 +47,6 @@ return [
     'google_fonts' => [
         'allowed' => true,
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Admin Panel Logo
@@ -69,7 +65,6 @@ return [
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'Admin Logo',
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Logo
@@ -93,7 +88,6 @@ return [
             'height' => 50,
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Preloader Animation
@@ -116,7 +110,6 @@ return [
             'height' => 60,
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | User Menu
@@ -135,7 +128,6 @@ return [
     'usermenu_image' => false,
     'usermenu_desc' => false,
     'usermenu_profile_url' => false,
-
     /*
     |--------------------------------------------------------------------------
     | Layout
@@ -154,7 +146,6 @@ return [
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Views Classes
@@ -173,7 +164,6 @@ return [
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
     'classes_auth_btn' => 'btn-flat btn-primary',
-
     /*
     |--------------------------------------------------------------------------
     | Admin Panel Classes
@@ -197,7 +187,6 @@ return [
     'classes_topnav' => 'navbar navbar-dark bg-primary',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
-
     /*
     |--------------------------------------------------------------------------
     | Sidebar
@@ -219,7 +208,6 @@ return [
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
     'sidebar_nav_animation_speed' => 300,
-
     /*
     |--------------------------------------------------------------------------
     | Control Sidebar (Right Sidebar)
@@ -239,7 +227,6 @@ return [
     'right_sidebar_push' => true,
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
-
     /*
     |--------------------------------------------------------------------------
     | URLs
@@ -260,7 +247,6 @@ return [
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
     'profile_url' => false,
-
     /*
     |--------------------------------------------------------------------------
     | Laravel Mix
@@ -276,7 +262,6 @@ return [
     'enabled_laravel_mix' => false,
     'laravel_mix_css_path' => 'css/app.css',
     'laravel_mix_js_path' => 'js/app.js',
-
     /*
     |--------------------------------------------------------------------------
     | Menu Items
@@ -297,30 +282,38 @@ return [
         //     'topnav_right' => true,
         // ],
         [
-            'type'         => 'fullscreen-widget',
+            'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-
         // Sidebar items:
         [
             'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'url' => 'admin/blog',
+            'can' => 'manage-blog',
         ],
         [
-            'text'        => 'Profil',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
+            'text' => 'Profil',
+            'url' => 'admin/pages',
+            'icon' => 'far fa-fw fa-file',
         ],
         ['header' => 'Data'],
         [
             'text' => 'Petugas',
-            'url'  => '/petugas',
+            'url' => '/petugas',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Makanan',
+            'url' => '/makanan',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Minuman',
+            'url' => '/minuman',
             'icon' => 'fas fa-fw fa-user',
         ],
         ['header' => 'User Management'],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Menu Filters
@@ -342,7 +335,6 @@ return [
         JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter::class,
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Plugins Initialization
@@ -427,7 +419,6 @@ return [
             ],
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | IFrame
@@ -460,7 +451,6 @@ return [
             'use_navbar_items' => true,
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Livewire

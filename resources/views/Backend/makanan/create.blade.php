@@ -3,34 +3,36 @@
 
 @section('content')
     <div class="d-flex flex-row justify-content-between">
-        <p class="btn btn-primary mt-3">Halaman Tambah Petugas</p>
+        <p class="btn btn-primary mt-3">Halaman Tambah Makanan</p>
     </div>
     <div class="d-flex flex-row gap-4">
         <div class="my_card w-75">
-            <form method="POST" action="{{ url('petugas') }}">
+            <form method="POST" action="{{ url('makanan') }}">
                 <div class="form-group row">
                     @csrf
-                    <label class="col-sm-3 col-form-label mb-3">Nomor Petugas</label>
+                    <label class="col-sm-3 col-form-label mb-3">Gambar Makanan</label>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" name="nomor_petugas" placeholder="10010" required>
+                        <input class="form-control" type="text" name="gambar_makanan" placeholder="gambar.jpg" required>
                     </div>
-                    <label class="col-sm-3 col-form-label mb-3">Nama Petugas</label>
+                    <label class="col-sm-3 col-form-label mb-3">Nama Makanan</label>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" name="nama_petugas" placeholder="Nama Petugas" required>
+                        <input class="form-control" type="text" name="nama_makanan" placeholder="soto" required>
                     </div>
-                    <label class="col-sm-3 col-form-label mb-3">Tugas Petugas</label>
+                    <label class="col-sm-3 col-form-label mb-3">Harga Makanan</label>
                     <div class="col-sm-7">
-                        <input class="form-control" type="text" name="tugas_petugas" placeholder="Tugas Petugas"
-                            required>
+                        <input class="form-control" type="text" name="harga_makanan" placeholder="100000" required>
                     </div>
-                    <label class="col-sm-3 col-form-label mb-5">Tanggal Lahir</label>
-                    <div class="col-sm-3">
-                        <input class="form-control" type="date" name="tanggal_lahir" placeholder="Tanggal Lahir"
-                            required>
+                    <label class="col-sm-3 col-form-label mb-3">Toko Makanan</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" name="toko_makanan" placeholder="bu siti" required>
+                    </div>
+                    <label class="col-sm-3 col-form-lable mb-5">Deskripsi</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text" name="deskripsi_makanan" placeholder="deskripsi">
                     </div>
                 </div>
                 <div class="d-flex flex-row justify-content-between">
-                    <a class="btn btn-primary" href="{{ url('petugas') }}">Kembali</a>
+                    <a class="btn btn-primary" href="{{ url('makanan') }}">Kembali</a>
                     <button class="btn btn-success" type="submit">Selesai</button>
                 </div>
             </form>

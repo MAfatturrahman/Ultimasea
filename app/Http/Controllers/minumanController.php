@@ -13,7 +13,8 @@ class minumanController extends Controller
         $minuman = minuman::all();
         return view('Backend.minuman.index', compact(
             'minuman'
-        ));
+        )
+        );
     }
 
     // Untuk memanggil halaman create(Halman Admin)
@@ -39,18 +40,24 @@ class minumanController extends Controller
     public function show($id)
     {
         $minuman = minuman::find($id);
-        return view('Backend.minuman.show', compact(
-            'minuman'
-        ));
+        return view(
+            'Backend.minuman.show',
+            compact(
+                'minuman'
+            )
+        );
     }
 
     // Untuk memanggil halaman edit(Halaman Edit)
     public function edit($id)
     {
         $minuman = minuman::find($id);
-        return view('Backend.minuman.show', compact(
-            'minuman'
-        ));
+        return view(
+            'Backend.minuman.show',
+            compact(
+                'minuman'
+            )
+        );
     }
 
     // Untuk 

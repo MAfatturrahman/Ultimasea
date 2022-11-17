@@ -53,7 +53,7 @@ class petugasController extends Controller
     public function edit($id)
     {
         $petugas = petugas::find($id);
-        return view('Backend.petugas.create', compact(
+        return view('Backend.petugas.edit', compact(
             'petugas'
         ));
     }

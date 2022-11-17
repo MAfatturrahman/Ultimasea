@@ -13,7 +13,8 @@ class makananController extends Controller
         $makanan = makanan::all();
         return view('Backend.makanan.index', compact(
             'makanan'
-        ));
+        )
+        );
     }
 
     // Untuk memanggil halaman create(Halman Admin)
@@ -32,7 +33,7 @@ class makananController extends Controller
         $makanan->deskripsi_makanan = $request->deskripsi_makanan;
         $makanan->toko_makanan = $request->toko_makanan;
         $makanan->save();
-        return redirect()->view('makanan.index')->with('alert', 'Data Makanan Berhasil di Tambah');
+        return redirect()->route('makanan.index')->with('alert', 'Data Makanan Berhasil di Tambah');
     }
 
     // Untuk memanggil halaman show(Halaman Admin)
@@ -41,7 +42,8 @@ class makananController extends Controller
         $makanan = makanan::find($id);
         return view('Backend.makanan.show', compact(
             'makanan'
-        ));
+        )
+        );
     }
 
     // Untuk memanggil halaman edit(Halaman Edit)
@@ -50,7 +52,8 @@ class makananController extends Controller
         $makanan = makanan::find($id);
         return view('Backend.makanan.show', compact(
             'makanan'
-        ));
+        )
+        );
     }
 
     // Untuk 
@@ -63,13 +66,13 @@ class makananController extends Controller
         $makanan->deskripsi_makanan = $request->deskripsi_makanan;
         $makanan->toko_makanan = $request->toko_makanan;
         $makanan->save();
-        return redirect()->view('makanan.index')->with('alert', 'Data Makanan Berhasil di Edit');
+        return redirect()->route('makanan.index')->with('alert', 'Data Makanan Berhasil di Edit');
     }
 
     // Untuk menghapus data makanan(Halaman Admin)
     public function destroy($id)
     {
         $makanan = makanan::find($id)->delete();
-        return redirect()->view('makanan.index')->with('alert', 'Data Makanan Berhasil di Hapus');
+        return redirect()->route('makanan.index')->with('alert', 'Data Makanan Berhasil di Hapus');
     }
 }
