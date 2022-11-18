@@ -33,23 +33,21 @@
                 </div>
                 <div class="d-flex flex-row justify-content-between">
                     <a class="btn btn-primary" href="{{ url('makanan') }}">Kembali</a>
-                    <button class="btn btn-success" type="submit">Selesai</button>
+                    <button class="btn btn-success" type="submit">Tambahkan</button>
                 </div>
             </form>
         </div>
         <div class="my_card w-50">
             <p class="text-center" style="color: red; font-size: 24px;">Perhatian</p>
-            <p style="line-height: 1.8">Tata cara pengisian untuk menambahkan petugas baru :
-                <br> 1. Nomor petugas harus berbeda dengan nilai yang sudah ada
-                <br> 2. Nama petugas harus di isi dengan lengkap
-                <br> 3. Isilah tugas yang telah di tentukan dari lamaran pekerjaan
-                <br> 4. Tanggal lahir harus di isi sesuai dengan tanggal lahir petugas yang di terima oleh perusahaan
-                ultimasea
-                <br> 5. jika sudah maka petugas dapat menekan tombol tambahkan
-                <br> 6. jika petugs ingin kembali tanpa menambahkan data maka petugas dapat menekan tombol kembali
-                <br> 7. petugas tidak perlu memasukkan umur karna sistem akan langsung menghitung sendiri umur yang telah di
-                miliki
-                oleh karyawan baru
+            <p style="line-height: 1.8">Tata cara pengisian untuk menambahkan makanan baru :
+                <br> 1. Petugas harus menambah foto yang telah di berikan oleh penjual
+                <br> 2. Nama makanan harus di isi dengan benar sesuai dengan pesanan penjual
+                <br> 3. Harga yang terterah pada makanan harus sesuai logika dan masuk akal jangan sampai harganya di atas
+                100000 rupiah
+                <br> 4. Nama toko harus sesuai dengan pesanan penjual jangan sampai salah memasukkan nama toko atau kamu
+                tanggung sendiri akibatnya
+                <br> 5. Deskripsi toko yang harus di masukkan jangan terlalu banyak karna sistem akan langsung memotong
+                deskripsinya secara langsung dan deskripsi tersebut tidak boleh menyinggu atau ada kata kata sarkas
             </p>
         </div>
     </div>

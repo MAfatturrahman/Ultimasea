@@ -34,7 +34,7 @@
                 </div>
                 <div class="d-flex flex-row justify-content-between">
                     <a class="btn btn-primary" href="{{ url('petugas') }}">Kembali</a>
-                    <button class="btn btn-success" type="submit">Selesai</button>
+                    <button class="btn btn-success" type="submit">Perbaharui</button>
                 </div>
             </form>
         </div>

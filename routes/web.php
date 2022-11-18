@@ -32,33 +32,33 @@ Route::group(['middleware' => ['auth']], function () {
     // ---------------------------------------------------------------------------------------------------------
     Route::get('/petugas', [petugasController::class, 'index'])->name('petugas.index')->middleware();
     Route::get('/petugas/create', [petugasController::class, 'create'])->name('petugas.create')->middleware();
-    Route::get('/petugas/{$id}', [petugasController::class, 'show'])->name('petugas.show')->middleware();
+    Route::get('/petugas/{id}', [petugasController::class, 'show'])->name('petugas.show')->middleware();
     Route::get('petugas/{id}/edit', [petugasController::class, 'edit'])->name('petugas.edit')->middleware();
-    Route::delete('/petugas/{$id}', [petugasController::class, 'destroy'])->name('petugas.destroy')->middleware();
+    Route::delete('/petugas/{id}', [petugasController::class, 'destroy'])->name('petugas.destroy')->middleware();
     Route::post('/petugas', [petugasController::class, 'store'])->name('petugas.store')->middleware();
-    Route::put('/petugas/{$id}', [petugasController::class, 'update'])->name('petugas.update')->middleware();
+    Route::put('/petugas/{id}', [petugasController::class, 'update'])->name('petugas.update')->middleware();
     // ---------------------------------------------------------------------------------------------------------
 
     // Makanan
     // ---------------------------------------------------------------------------------------------------------
     Route::get('/makanan', [makananController::class, 'index'])->name('makanan.index')->middleware();
     Route::get('/makanan/create', [makananController::class, 'create'])->name('makanan.create')->middleware();
-    Route::get('/makanan/{$id}/edit', [makananController::class, 'edit'])->name('makanan.edit')->middleware();
-    Route::get('/makanan/{$id}', [makananController::class, 'show'])->name('makanan.show')->middleware();
-    Route::delete('/makanan/{$id}', [makananController::class, 'destroy'])->name('makanan.destroy')->middleware();
+    Route::get('/makanan/{id}', [makananController::class, 'show'])->name('makanan.show')->middleware();
+    Route::get('/makanan/{id}/edit', [makananController::class, 'edit'])->name('makanan.edit')->middleware();
+    Route::delete('/makanan/{id}', [makananController::class, 'destroy'])->name('makanan.destroy')->middleware();
     Route::post('/makanan', [makananController::class, 'store'])->name('makanan.store')->middleware();
-    Route::put('/makanan/{$id}', [makananController::class, 'update'])->name('makanan.update')->middleware();
+    Route::put('/makanan/{id}', [makananController::class, 'update'])->name('makanan.update')->middleware();
     // ---------------------------------------------------------------------------------------------------------
 
     // Minuman
     // ---------------------------------------------------------------------------------------------------------
     Route::get('/minuman', [minumanController::class, 'index'])->name('minuman.index')->middleware();
     Route::get('/minuman/create', [minumanController::class, 'create'])->name('minuman.create')->middleware();
-    Route::get('/minuman/{$id}/edit', [minumanController::class, 'edit'])->name('minuman.edit')->middleware();
-    Route::get('/minuman/{$id}', [minumanController::class, 'show'])->name('minuman.show')->middleware();
-    Route::delete('/minuman/{$id}', [minumanController::class, 'destroy'])->name('minuman.destroy')->middleware();
+    Route::get('/minuman/{id}/edit', [minumanController::class, 'edit'])->name('minuman.edit')->middleware();
+    Route::get('/minuman/{id}', [minumanController::class, 'show'])->name('minuman.show')->middleware();
+    Route::delete('/minuman/{id}', [minumanController::class, 'destroy'])->name('minuman.destroy')->middleware();
     Route::post('/minuman', [minumanController::class, 'store'])->name('minuman.store')->middleware();
-    Route::put('/minuman/{$id}', [minumanController::class, 'update'])->name('minuman.update')->middleware();
+    Route::put('/minuman/{id}', [minumanController::class, 'update'])->name('minuman.update')->middleware();
     // ---------------------------------------------------------------------------------------------------------
 
     // Fasilitas

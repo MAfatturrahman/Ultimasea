@@ -50,10 +50,9 @@ class makananController extends Controller
     public function edit($id)
     {
         $makanan = makanan::find($id);
-        return view('Backend.makanan.show', compact(
+        return view('Backend.makanan.edit', compact(
             'makanan'
-        )
-        );
+        ));
     }
 
     // Untuk 

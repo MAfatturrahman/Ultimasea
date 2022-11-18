@@ -11,9 +11,11 @@ class minumanController extends Controller
     public function index()
     {
         $minuman = minuman::all();
-        return view('Backend.minuman.index', compact(
-            'minuman'
-        )
+        return view(
+            'Backend.minuman.index',
+            compact(
+                'minuman'
+            )
         );
     }
 
@@ -33,7 +35,7 @@ class minumanController extends Controller
         $minuman->deskripsi_minuman = $request->deskripsi_minuman;
         $minuman->toko_minuman = $request->toko_minuman;
         $minuman->save();
-        return redirect()->view('minuman.index')->with('alert', 'Data Minuman Berhasil di Tambah');
+        return redirect()->route('minuman.index')->with('alert', 'Data Minuman Berhasil di Tambah');
     }
 
     // Untuk memanggil halaman show(Halaman Admin)
@@ -53,7 +55,7 @@ class minumanController extends Controller
     {
         $minuman = minuman::find($id);
         return view(
-            'Backend.minuman.show',
+            'Backend.minuman.edit',
             compact(
                 'minuman'
             )
@@ -70,13 +72,13 @@ class minumanController extends Controller
         $minuman->deskripsi_minuman = $request->deskripsi_minuman;
         $minuman->toko_minuman = $request->toko_minuman;
         $minuman->save();
-        return redirect()->view('minuman.index')->with('alert', 'Data Minuman Berhasil di Edit');
+        return redirect()->route('minuman.index')->with('alert', 'Data Minuman Berhasil di Edit');
     }
 
     // Untuk menghapus data minuman(Halaman Admin)
     public function destroy($id)
     {
         $minuman = minuman::find($id)->delete();
-        return redirect()->view('minuman.index')->with('alert', 'Data Minuman Berhasil di Hapus');
+        return redirect()->route('minuman.index')->with('alert', 'Data Minuman Berhasil di Hapus');
     }
 }

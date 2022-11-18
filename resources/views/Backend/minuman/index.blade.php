@@ -1,13 +1,8 @@
 @extends('adminlte::page')
 @extends('css.card')
+@extends('css.img')
 
 @section('content')
-    {{-- @if ($message = Session::get('alert'))
-        <div id="peringatan" class="alert alert-success">
-            <p class="notif-create">{{ $pesan }}</p>
-        </div>
-    @endif --}}
-
     <div class="d-flex flex-row justify-content-between">
         <a class="btn btn-success mb-3 mt-3" href="{{ route('minuman.create') }}">Tambah</a>
         <p class="btn btn-primary mb-3 mt-3">Halaman Minuman</p>
@@ -27,7 +22,7 @@
             
                 $btnDetails = '<a href="' . route('minuman.show', $minumanData->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>';
             
-                $dataMinuman[] = [$no++, $minumanData->gambar_minuman, $minumanData->nama_minuman, $minumanData->harga_minuman, $minumanData->toko_minuman, $minumanData->deskripsi_minuman, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('minuman.destroy', $minumanData->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
+                $dataMinuman[] = [$no++, '<img src="' . $minumanData->gambar_minuman . '">', $minumanData->nama_minuman, $minumanData->harga_minuman, $minumanData->toko_minuman, $minumanData->deskripsi_minuman, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('minuman.destroy', $minumanData->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
             }
             
             $config = [

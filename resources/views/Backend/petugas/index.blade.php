@@ -2,12 +2,6 @@
 @extends('css.card')
 
 @section('content')
-    {{-- @if ($message = Session::get('alert'))
-        <div id="peringatan" class="alert alert-success">
-            <p class="notif-create">{{ $pesan }}</p>
-        </div>
-    @endif --}}
-
     <div class="d-flex flex-row justify-content-between">
         <a class="btn btn-success mb-3 mt-3" href="{{ route('petugas.create') }}">Tambah</a>
         <p class="btn btn-primary mb-3 mt-3">Halaman Petugas</p>
