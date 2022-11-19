@@ -312,6 +312,16 @@ return [
             'url' => '/minuman',
             'icon' => 'fas fa-fw fa-user',
         ],
+        [
+            'text' => 'Fasilitas',
+            'url' => '/fasilitas',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Peraturan',
+            'url' => '/peraturan',
+            'icon' => 'fas fa-fw fa-user',
+        ],
         ['header' => 'User Management'],
     ],
     /*

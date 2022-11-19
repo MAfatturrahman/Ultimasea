@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\fasilitasController;
+use App\Http\Controllers\peraturanController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
@@ -65,10 +66,21 @@ Route::group(['middleware' => ['auth']], function () {
     // ---------------------------------------------------------------------------------------------------------
     Route::get('/fasilitas', [fasilitasController::class, 'index'])->name('fasilitas.index')->middleware();
     Route::get('/fasilitas/create', [fasilitasController::class, 'create'])->name('fasilitas.create')->middleware();
-    Route::get('/fasilitas/{$id}/edit', [fasilitasController::class, 'edit'])->name('fasilitas.edit')->middleware();
-    Route::get('/fasilitas/{$id}', [fasilitasController::class, 'show'])->name('fasilitas.show')->middleware();
-    Route::delete('/fasilitas/{$id}', [fasilitasController::class, 'destroy'])->name('fasilitas.destroy')->middleware();
+    Route::get('/fasilitas/{id}/edit', [fasilitasController::class, 'edit'])->name('fasilitas.edit')->middleware();
+    Route::get('/fasilitas/{id}', [fasilitasController::class, 'show'])->name('fasilitas.show')->middleware();
+    Route::delete('/fasilitas/{id}', [fasilitasController::class, 'destroy'])->name('fasilitas.destroy')->middleware();
     Route::post('/fasilitas', [fasilitasController::class, 'store'])->name('fasilitas.store')->middleware();
-    Route::put('/fasilitas/{$id}', [fasilitasController::class, 'update'])->name('fasilitas.update')->middleware();
+    Route::put('/fasilitas/{id}', [fasilitasController::class, 'update'])->name('fasilitas.update')->middleware();
+    // ---------------------------------------------------------------------------------------------------------
+
+    // Peraturan
+    // ---------------------------------------------------------------------------------------------------------
+    Route::get('/peraturan', [peraturanController::class, 'index'])->name('peraturan.index')->middleware();
+    Route::get('/perturan/create', [peraturanController::class, 'create'])->name('peraturan.create')->middleware();
+    Route::get('/peraturan/{id}/edit', [peraturanController::class, 'edit'])->name('peraturan.edit')->middleware();
+    Route::get('/peraturan/{id}', [petugasController::class, 'show'])->name('peraturan.show')->middleware();
+    Route::delete('/peraturan/{id}', [peratuanController::class, 'destroy'])->name('peraturan.destroy')->middleware();
+    Route::post('/peraturan', [peraturanController::class, 'store'])->name('peraturan.store')->middleware();
+    Route::put('peraturan/{id}', [peraturanController::class, 'update'])->name('peraturan.update')->middleware();
     // ---------------------------------------------------------------------------------------------------------
 });

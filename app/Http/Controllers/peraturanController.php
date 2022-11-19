@@ -11,9 +11,12 @@ class peraturanController extends Controller
     public function index()
     {
         $peraturan = peraturan::all();
-        return view('Backend.peraturan.index', compact(
-            'peraturan'
-        ));
+        return view(
+            'Backend.peraturan.index',
+            compact(
+                'peraturan'
+            )
+        );
     }
 
     // Untuk memanggil halaman create(Halaman Admin)
@@ -28,40 +31,46 @@ class peraturanController extends Controller
         $peraturan = new peraturan;
         $peraturan->nama_peraturan = $request->nama_peraturan;
         $peraturan->save();
-        return redirect()->view('peraturan.index')->with('alert', 'Data Peraturan Berhasil di Tambah');
+        return redirect()->route('peraturan.index')->with('alert', 'Data Peraturan Berhasil di Tambah');
     }
 
     // Untuk memanggil halaman show(Halaman Admin)
     public function show($id)
     {
         $peraturan = peraturan::find($id);
-        return view('Backend.peraturan.show', compact(
-            'peraturan'
-        ));
+        return view(
+            'Backend.peraturan.show',
+            compact(
+                'peraturan'
+            )
+        );
     }
 
     // Untuk memanggil halaman edit(Halaman Admin)
     public function edit($id)
     {
         $peraturan = peraturan::find($id);
-        return view('Backend.peratruran.edit', compact(
-            'peraturan'
-        ));
+        return view(
+            'Backend.peraturan.edit',
+            compact(
+                'peraturan'
+            )
+        );
     }
 
     // Untuk menyimpan data apa saja yang telah di ubah oleh petugas(Halaman Admin)
     public function update(Request $request, $id)
     {
         $peraturan = peraturan::find($id);
-        $peraturan->nama_peraturan = $request->nama_peratuan;
+        $peraturan->nama_peraturan = $request->nama_peraturan;
         $peraturan->save();
-        return redirect()->view('peraturan.index')->with('alert', 'Data Peraturan Berhasil di Edit');
+        return redirect()->route('peraturan.index')->with('alert', 'Data Peraturan Berhasil di Edit');
     }
 
     // Untuk menghapus data peraturan(Halaman Admin)
     public function destroy($id)
     {
         $peraturan = peraturan::find($id)->delete();
-        return redirect()->view('peraturan.index')->with('alert', 'Data Peraturan Berhasil di Hapus');
+        return redirect()->routes('peraturan.index')->with('alert', 'Data Peraturan Berhasil di Hapus');
     }
 }

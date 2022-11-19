@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="d-flex flex-row justify-content-between">
-        <p class="btn btn-primary mt-3">Halaman Tambah Petugas</p>
+        <p class="btn btn-primary mt-3">Halaman Edit Petugas</p>
     </div>
     <div class="d-flex flex-row gap-4">
         <div class="my_card w-75">
