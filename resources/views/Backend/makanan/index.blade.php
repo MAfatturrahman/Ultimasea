@@ -4,7 +4,9 @@
 
 @section('content')
     <div class="d-flex flex-row justify-content-between">
-        <a class="btn btn-success mb-3 mt-3" href="{{ route('makanan.create') }}">Tambah</a>
+        @if (auth()->user()->can('create-makanan'))
+            <a class="btn btn-success mb-3 mt-3" href="{{ route('makanan.create') }}">Tambah</a>
+        @endif
         <p class="btn btn-primary mb-3 mt-3">Halaman Makanan</p>
     </div>
 
@@ -16,11 +18,23 @@
             
             $dataMakanan = [];
             foreach ($makanan as $makananData) {
-                $btnEdit = '<a href="' . route('makanan.edit', $makananData->id) . '" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>';
+                $btnEdit = auth()
+                    ->user()
+                    ->can('edit-makanan')
+                    ? '<a href="' . route('makanan.edit', $makananData->id) . '" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>'
+                    : '';
             
-                $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>';
+                $btnDelete = auth()
+                    ->user()
+                    ->can('delete-makanan')
+                    ? '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>'
+                    : '';
             
-                $btnDetails = '<a href="' . route('makanan.show', $makananData->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>';
+                $btnDetails = auth()
+                    ->user()
+                    ->can('show-makanan')
+                    ? '<a href="' . route('makanan.show', $makananData->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>'
+                    : '';
             
                 $dataMakanan[] = [$no++, '<img src="' . $makananData->gambar_makanan . '">', $makananData->nama_makanan, $makananData->harga_makanan, $makananData->toko_makanan, $makananData->deskripsi_makanan, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('makanan.destroy', $makananData->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
             }

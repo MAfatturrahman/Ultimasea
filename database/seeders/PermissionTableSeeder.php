@@ -1,0 +1,72 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+
+class PermissionTableSeeder extends Seeder
+{
+    // Untuk membuat permission 
+    public function run()
+    {
+        $permissions = [
+            // Permission Petugas
+            'view-petugas',
+            'create-petugas',
+            'edit-petugas',
+            'show-petugas',
+            'delete-petugas',
+
+            // Permission Makanan
+            'view-makanan',
+            'create-makanan',
+            'edit-makanan',
+            'show-makanan',
+            'delete-makanan',
+
+            // Permission Minuman
+            'view-minuman',
+            'create-minuman',
+            'edit-minuman',
+            'show-minuman',
+            'delete-minuman',
+
+            // Permission Fasilitas
+            'view-fasilitas',
+            'create-fasilitas',
+            'edit-fasilitas',
+            'show-fasilitas',
+            'delete-fasilitas',
+
+            // Permission Peraturan
+            'view-peraturan',
+            'create-peraturan',
+            'edit-peraturan',
+            'delete-peraturan',
+
+            // Permission User Management
+            'view-userManagement',
+            'create-userManagement',
+            'edit-userManagement',
+            'show-userManagement',
+            'delete-userManagement',
+
+            // Permission Role
+            'view-role',
+            'create-role',
+            'edit-role',
+            'show-role',
+            'delete-role',
+
+            // Permission Audit
+            'view-audit',
+            'show-audit',
+        ];
+
+        foreach ($permissions as $permission) {
+            Permission::create(['name' => $permission]);
+        }
+    }
+}

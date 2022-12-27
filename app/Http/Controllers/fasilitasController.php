@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\fasilitas;
+use App\Models\Fasilitas;
 
-class fasilitasController extends Controller
+class FasilitasController extends Controller
 {
     // Untuk memanggil halaman fasilitas(Halaman Admin)
     public function index()
     {
-        $fasilitas = fasilitas::all();
+        $fasilitas = Fasilitas::all();
         return view(
             'Backend.fasilitas.index',
             compact(
@@ -28,7 +28,7 @@ class fasilitasController extends Controller
     // Untuk menyimpan data yang di berikan dari petugas(Halaman Admin)
     public function store(Request $request)
     {
-        $fasilitas = new fasilitas;
+        $fasilitas = new Fasilitas;
         $fasilitas->gambar_fasilitas = $request->gambar_fasilitas;
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
         $fasilitas->status_fasilitas = $request->status_fasilitas;
@@ -40,7 +40,7 @@ class fasilitasController extends Controller
     // Untuk memanggil halaman show(Admin Page)
     public function show($id)
     {
-        $fasiliats = fasilitas::find($id);
+        $fasilitas = Fasilitas::find($id);
         return view(
             'Backend.fasilitas.show',
             compact(
@@ -52,7 +52,7 @@ class fasilitasController extends Controller
     // Untuk memanggil halaman edit(Halaman Admin)
     public function edit($id)
     {
-        $fasilitas = fasilitas::find($id);
+        $fasilitas = Fasilitas::find($id);
         return view(
             'Backend.fasilitas.edit',
             compact(
@@ -64,7 +64,7 @@ class fasilitasController extends Controller
     // Untuk menyimpan data apa saja yang telah di ubah(Halaman Admin) 
     public function update(Request $request, $id)
     {
-        $fasilitas = fasilitas::find($id);
+        $fasilitas = Fasilitas::find($id);
         $fasilitas->gambar_fasilitas = $request->gambar_fasilitas;
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
         $fasilitas->status_fasilitas = $request->status_fasilitas;
@@ -76,7 +76,7 @@ class fasilitasController extends Controller
     // Untuk menghapus data fasilitas(Halaman Admin)
     public function destroy($id)
     {
-        $fasilitas = fasilitas::find($id)->delete();
+        $fasilitas = Fasilitas::find($id)->delete();
         return redirect()->route('fasilitas.index')->with('alert', 'Data Fasilitas Berhasil di Hapus');
     }
 }

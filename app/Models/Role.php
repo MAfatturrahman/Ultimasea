@@ -4,11 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use OwenIt\Auditing\Contracts\Auditable;
 
-class Makanan extends Model implements Auditable
+class Role extends Model
 {
-    use \OwenIt\Auditing\Auditable;
-
     use HasFactory;
 }

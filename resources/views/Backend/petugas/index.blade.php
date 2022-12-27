@@ -3,7 +3,9 @@
 
 @section('content')
     <div class="d-flex flex-row justify-content-between">
-        <a class="btn btn-success mb-3 mt-3" href="{{ route('petugas.create') }}">Tambah</a>
+        @if (auth()->user()->can('create-petugas'))
+            <a class="btn btn-success mb-3 mt-3" href="{{ route('petugas.create') }}">Tambah</a>
+        @endif
         <p class="btn btn-primary mb-3 mt-3">Halaman Petugas</p>
     </div>
 
@@ -15,9 +17,24 @@
             
             $dataPetugas = [];
             foreach ($petugas as $petugasData) {
-                $btnEdit = '<a href="' . route('petugas.edit', $petugasData->id) . '" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>';
-                $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>';
-                $btnDetails = '<a href="' . route('petugas.show', $petugasData->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>';
+                $btnEdit = auth()
+                    ->user()
+                    ->can('edit-petugas')
+                    ? '<a href="' . route('petugas.edit', $petugasData->id) . '" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>'
+                    : '';
+            
+                $btnDelete = auth()
+                    ->user()
+                    ->can('delete-petugas')
+                    ? '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>'
+                    : '';
+            
+                $btnDetails = auth()
+                    ->user()
+                    ->can('show-petugas')
+                    ? '<a href="' . route('petugas.show', $petugasData->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>'
+                    : '';
+            
                 $dataPetugas[] = [$no++, $petugasData->nomor_petugas, $petugasData->nama_petugas, $petugasData->tugas_petugas, $petugasData->umur_petugas, $petugasData->tanggal_lahir, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('petugas.destroy', $petugasData->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
             }
             

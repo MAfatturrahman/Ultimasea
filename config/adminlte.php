@@ -300,29 +300,44 @@ return [
         [
             'text' => 'Petugas',
             'url' => '/petugas',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa-solid fa-user-tie',
         ],
         [
             'text' => 'Makanan',
             'url' => '/makanan',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa-solid fa-utensils',
         ],
         [
             'text' => 'Minuman',
             'url' => '/minuman',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa-solid fa-wine-bottle',
         ],
         [
             'text' => 'Fasilitas',
             'url' => '/fasilitas',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa-solid fa-book',
         ],
         [
             'text' => 'Peraturan',
             'url' => '/peraturan',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa-solid fa-ban',
         ],
         ['header' => 'User Management'],
+        [
+            'text' => 'User Management',
+            'url' => '/userManagement',
+            'icon' => 'fa-solid fa-ban',
+        ],
+        [
+            'text' => 'Role',
+            'url' => '/role',
+            'icon' => 'fa-solid fa-ban',
+        ],
+        [
+            'text' => 'Audit',
+            'url' => '/audit',
+            'icon' => 'fa-solid fa-ban',
+        ],
     ],
     /*
     |--------------------------------------------------------------------------
@@ -390,6 +405,21 @@ return [
                     'type' => 'css',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/select2/js/select2.full.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/select2/css/select2.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/select2-bootstrap4-theme/select2-bootstrap4.min.css',
                 ],
             ],
         ],

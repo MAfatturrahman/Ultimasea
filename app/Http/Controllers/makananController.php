@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\makanan;
+use App\Models\Makanan;
 
-class makananController extends Controller
+class MakananController extends Controller
 {
     // Untuk memanggil halaman makanan(Halman Admin)
     public function index()
     {
-        $makanan = makanan::all();
-        return view('Backend.makanan.index', compact(
-            'makanan'
-        )
+        $makanan = Makanan::all();
+        return view(
+            'Backend.makanan.index',
+            compact(
+                'makanan'
+            )
         );
     }
 
@@ -26,7 +28,7 @@ class makananController extends Controller
     // Untuk menyimpan data yang di masukkan oleh petugas(Halman Admin)
     public function store(Request $request)
     {
-        $makanan = new makanan;
+        $makanan = new Makanan;
         $makanan->gambar_makanan = $request->gambar_makanan;
         $makanan->nama_makanan = $request->nama_makanan;
         $makanan->harga_makanan = $request->harga_makanan;
@@ -39,26 +41,31 @@ class makananController extends Controller
     // Untuk memanggil halaman show(Halaman Admin)
     public function show($id)
     {
-        $makanan = makanan::find($id);
-        return view('Backend.makanan.show', compact(
-            'makanan'
-        )
+        $makanan = Makanan::find($id);
+        return view(
+            'Backend.makanan.show',
+            compact(
+                'makanan'
+            )
         );
     }
 
     // Untuk memanggil halaman edit(Halaman Edit)
     public function edit($id)
     {
-        $makanan = makanan::find($id);
-        return view('Backend.makanan.edit', compact(
-            'makanan'
-        ));
+        $makanan = Makanan::find($id);
+        return view(
+            'Backend.makanan.edit',
+            compact(
+                'makanan'
+            )
+        );
     }
 
     // Untuk 
     public function update(Request $request, $id)
     {
-        $makanan = makanan::find($id);
+        $makanan = Makanan::find($id);
         $makanan->gambar_makanan = $request->gambar_makanan;
         $makanan->nama_makanan = $request->nama_makanan;
         $makanan->harga_makanan = $request->harga_makanan;
@@ -71,7 +78,7 @@ class makananController extends Controller
     // Untuk menghapus data makanan(Halaman Admin)
     public function destroy($id)
     {
-        $makanan = makanan::find($id)->delete();
+        $makanan = Makanan::find($id)->delete();
         return redirect()->route('makanan.index')->with('alert', 'Data Makanan Berhasil di Hapus');
     }
 }

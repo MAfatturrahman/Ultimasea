@@ -26,6 +26,16 @@
                         <input class="form-control" value="{{ $petugas->tugas_petugas }}" type="text"
                             name="tugas_petugas" placeholder="Tugas Petugas" required>
                     </div>
+                    <label class="col-sm-3 col-form-label mb-3">Email Petugas</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" value="{{ $petugas->email_petugas }}" type="text"
+                            name="email_petugas" placeholder="petugas@gmail.com" required>
+                    </div>
+                    <label class="col-sm-3 col-form-label mb-3">Nomor HP</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" value="{{ $petugas->nomor_telpon }}" type="text" name="nomor_telpon"
+                            placeholder="0812-5586-6698" required>
+                    </div>
                     <label class="col-sm-3 col-form-label mb-5">Tanggal Lahir</label>
                     <div class="col-sm-3">
                         <input class="form-control" value="{{ $petugas->tanggal_lahir }}" type="date"

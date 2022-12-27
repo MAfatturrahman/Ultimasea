@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\minuman;
+use App\Models\Minuman;
 
-class minumanController extends Controller
+class MinumanController extends Controller
 {
     // Untuk memanggil halaman minuman(Halman Admin)
     public function index()
     {
-        $minuman = minuman::all();
+        $minuman = Minuman::all();
         return view(
             'Backend.minuman.index',
             compact(
@@ -28,7 +28,7 @@ class minumanController extends Controller
     // Untuk menyimpan data yang di masukkan oleh petugas(Halman Admin)
     public function store(Request $request)
     {
-        $minuman = new minuman;
+        $minuman = new Minuman;
         $minuman->gambar_minuman = $request->gambar_minuman;
         $minuman->nama_minuman = $request->nama_minuman;
         $minuman->harga_minuman = $request->harga_minuman;
@@ -41,7 +41,7 @@ class minumanController extends Controller
     // Untuk memanggil halaman show(Halaman Admin)
     public function show($id)
     {
-        $minuman = minuman::find($id);
+        $minuman = Minuman::find($id);
         return view(
             'Backend.minuman.show',
             compact(
@@ -53,7 +53,7 @@ class minumanController extends Controller
     // Untuk memanggil halaman edit(Halaman Edit)
     public function edit($id)
     {
-        $minuman = minuman::find($id);
+        $minuman = Minuman::find($id);
         return view(
             'Backend.minuman.edit',
             compact(
@@ -65,7 +65,7 @@ class minumanController extends Controller
     // Untuk 
     public function update(Request $request, $id)
     {
-        $minuman = minuman::find($id);
+        $minuman = Minuman::find($id);
         $minuman->gambar_minuman = $request->gambar_minuman;
         $minuman->nama_minuman = $request->nama_minuman;
         $minuman->harga_minuman = $request->harga_minuman;
@@ -78,7 +78,7 @@ class minumanController extends Controller
     // Untuk menghapus data minuman(Halaman Admin)
     public function destroy($id)
     {
-        $minuman = minuman::find($id)->delete();
+        $minuman = Minuman::find($id)->delete();
         return redirect()->route('minuman.index')->with('alert', 'Data Minuman Berhasil di Hapus');
     }
 }

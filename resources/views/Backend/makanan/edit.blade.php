@@ -34,7 +34,7 @@
                     <label class="col-sm-3 col-form-lable mb-5">Deskripsi</label>
                     <div class="col-sm-7">
                         <input value="{{ $makanan->deskripsi_makanan }}" class="form-control" type="text"
-                            name="deskripsi_makanan" placeholder="deskripsi">
+                            name="deskripsi_makanan" placeholder="deskripsi" required>
                     </div>
                 </div>
                 <div class="d-flex flex-row justify-content-between">

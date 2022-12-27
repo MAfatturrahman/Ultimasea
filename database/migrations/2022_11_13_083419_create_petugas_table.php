@@ -17,6 +17,8 @@ return new class extends Migration {
             $table->string('nama_petugas');
             $table->string('nomor_petugas');
             $table->string('tugas_petugas');
+            $table->string('email_petugas');
+            $table->string('nomor_telpon');
             $table->date('tanggal_lahir');
             $table->integer('umur_petugas');
             $table->timestamps();
