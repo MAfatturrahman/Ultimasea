@@ -1,4 +1,5 @@
 @extends('adminlte::page')
+@extends('css.card')
 
 @section('title', 'Dashboard')
 
@@ -15,5 +16,7 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        console.log('Hi!');
+    </script>
 @stop

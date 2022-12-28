@@ -9,13 +9,12 @@
         <p class="btn btn-primary mb-3 mt-3">Halaman User</p>
     </div>
 
-    @if ($message = Session::get('success'))
-        <div id="peringatan" class="alert alert-success">
-            <p class="notif-create">{{ $message }}</p>
-        </div>
-    @endif
-
     <div class="my_card" style="width: 100%; margin: auto;">
+        @if ($message = Session::get('success'))
+            <div id="peringatan" class="alert alert-success">
+                <p class="notif-create">{{ $message }}</p>
+            </div>
+        @endif
         {{-- Table User Management --}}
         @php
             $heads = [['label' => 'No', 'no-export' => true, 'width' => 1], 'Nama', 'Email', 'Role', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
@@ -34,11 +33,17 @@
                     ->can('delete-userManagement')
                     ? '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>'
                     : '';
+
+                $btnDetails = auth()
+                    ->user()
+                    ->can('show-userManagement')
+                    ? '<a href="' . route('userManagement.show', $userManagement->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>'
+                    : '';
             
                 if ($userManagement->id == 1) {
                     $dataUserManagement[] = [$no++, $userManagement->name, $userManagement->email, $userManagement->getRoleNames()[0], '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('userManagement.destroy', $userManagement->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . '</form></nobr>'];
                 } else {
-                    $dataUserManagement[] = [$no++, $userManagement->name, $userManagement->email, $userManagement->getRoleNames()[0], '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('userManagement.destroy', $userManagement->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . '</form></nobr>'];
+                    $dataUserManagement[] = [$no++, $userManagement->name, $userManagement->email, $userManagement->getRoleNames()[0], '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('userManagement.destroy', $userManagement->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
                 }
             }
             
