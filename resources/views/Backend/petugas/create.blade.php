@@ -5,6 +5,7 @@
     <div class="d-flex flex-row justify-content-between">
         <p class="btn btn-primary mt-3">Halaman Tambah Petugas</p>
     </div>
+
     <div class="d-flex gap-4 flex-column flex-md-row">
         <form class="my_card" method="POST" action="{{ url('petugas') }}">
             <div class="form-group">
