@@ -5,40 +5,51 @@
     <div class="d-flex flex-row justify-content-between">
         <p class="btn btn-primary mt-3">Halaman Edit Fasilitas</p>
     </div>
-    <div class="d-flex flex-row gap-4">
-        <div class="my_card w-75">
+    <div class="d-flex flex-sm-row flex-column gap-4">
+        <div class="my_card align-self-baseline">
             <form method="POST" action="{{ route('fasilitas.update', $fasilitas->id) }}">
-                <div class="form-group row">
+                <div class="form-group">
                     @csrf
                     @method('PUT')
-                    <label class="col-sm-3 col-form-label mb-3">Gambar Fasilitas</label>
-                    <div class="col-sm-7">
-                        <input value="{{ $fasilitas->gambar_fasilitas }}" class="form-control" type="text"
-                            name="gambar_fasilitas" placeholder="gambar.jpg" required>
+                    <div class="mb-3 d-flex flex-sm-row flex-column align-items-start align-items-sm-center h-auto gap-2">
+                        <label class="form-label" style="width: 150px">Gambar Fasilitas</label>
+                        <div class="w-100">
+                            <input value="{{ $fasilitas->gambar_fasilitas }}" class="form-control" type="text"
+                                name="gambar_fasilitas" placeholder="gambar.jpg" required>
+                        </div>
                     </div>
-                    <label class="col-sm-3 col-form-label mb-3">Nama Fasilitas</label>
-                    <div class="col-sm-7">
-                        <input value="{{ $fasilitas->nama_fasilitas }}" class="form-control" type="text"
-                            name="nama_fasilitas" placeholder="toilet" required>
+
+                    <div class="mb-3 d-flex flex-sm-row flex-column align-items-start align-items-sm-center h-auto gap-2">
+                        <label class="form-label" style="width: 150px">Nama Fasilitas</label>
+                        <div class="w-100">
+                            <input value="{{ $fasilitas->nama_fasilitas }}" class="form-control" type="text"
+                                name="nama_fasilitas" placeholder="toilet" required>
+                        </div>
                     </div>
-                    <label class="col-sm-3 col-form-label mb-3">Status Fasilitas</label>
-                    <div class="col-sm-7">
-                        <input value="{{ $fasilitas->status_fasilitas }}" class="form-control" type="text"
-                            name="status_fasilitas" placeholder="status" required>
+
+                    <div class="mb-3 d-flex flex-sm-row flex-column align-items-start align-items-sm-center h-auto gap-2">
+                        <label class="form-label" style="width: 150px">Status Fasilitas</label>
+                        <div class="w-100">
+                            <input value="{{ $fasilitas->status_fasilitas }}" class="form-control" type="text"
+                                name="status_fasilitas" placeholder="status" required>
+                        </div>
                     </div>
-                    <label class="col-sm-3 col-form-lable mb-5">Deskripsi</label>
-                    <div class="col-sm-7">
-                        <input value="{{ $fasilitas->deskripsi_fasilitas }}" class="form-control" type="text"
-                            name="deskripsi_fasilitas" placeholder="deskripsi">
+
+                    <div class="mb-3 d-flex flex-sm-row flex-column align-items-start align-items-sm-center h-auto gap-2">
+                        <label class="form-label" style="width: 150px">Deskripsi</label>
+                        <div class="w-100">
+                            <input value="{{ $fasilitas->deskripsi_fasilitas }}" class="form-control" type="text"
+                                name="deskripsi_fasilitas" placeholder="deskripsi">
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex flex-row justify-content-between">
+                <div class="d-flex flex-sm-row flex-column gap-2 justify-content-between">
                     <a class="btn btn-primary" href="{{ url('fasilitas') }}">Kembali</a>
                     <button class="btn btn-success" type="submit">Perbaharui</button>
                 </div>
             </form>
         </div>
-        <div class="my_card w-50">
+        <div class="my_card align-self-baseline">
             <p class="text-center" style="color: red; font-size: 24px;">Perhatian</p>
             <p style="line-height: 1.8">Tata cara pengisian untuk menambahkan fasilitas baru :
                 <br> 1. Petugas harus memasukkan gambar yang ada pada inputan text pertama gambar bisa di cari di google
