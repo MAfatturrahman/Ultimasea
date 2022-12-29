@@ -5,45 +5,61 @@
     <div class="d-flex flex-row justify-content-between">
         <p class="btn btn-primary mt-3">Halaman Edit Minuman</p>
     </div>
-    <div class="d-flex flex-row gap-4">
-        <div class="my_card w-75">
+
+    <div class="d-flex flex-sm-row flex-column gap-4">
+        <div class="my_card align-self-baseline">
             <form method="POST" action="{{ route('minuman.update', $minuman->id) }}">
-                <div class="form-group row">
+                <div class="form-group">
                     @csrf
                     @method('PUT')
-                    <label class="col-sm-3 col-form-label mb-3">Gambar Minuman</label>
-                    <div class="col-sm-7">
-                        <input value="{{ $minuman->gambar_minuman }}" class="form-control" type="text"
-                            name="gambar_minuman" placeholder="gambar.jpg" required>
+                    <div class="mb-3 d-flex flex-sm-row flex-column align-items-start align-items-sm-center h-auto gap-2">
+                        <label class="form-label" style="width: 150px">Gambar Minuman</label>
+                        <div class="w-100">
+                            <input value="{{ $minuman->gambar_minuman }}" class="form-control" type="text"
+                                name="gambar_minuman" placeholder="gambar.jpg" required>
+                        </div>
                     </div>
-                    <label class="col-sm-3 col-form-label mb-3">Nama Minuman</label>
-                    <div class="col-sm-7">
-                        <input value="{{ $minuman->nama_minuman }}" class="form-control" type="text" name="nama_minuman"
-                            placeholder="soto" required>
+
+                    <div class="mb-3 d-flex flex-sm-row flex-column align-items-start align-items-sm-center h-auto gap-2">
+                        <label class="form-label" style="width: 150px">Nama Minuman</label>
+                        <div class="w-100">
+                            <input value="{{ $minuman->nama_minuman }}" class="form-control" type="text"
+                                name="nama_minuman" placeholder="soto" required>
+                        </div>
                     </div>
-                    <label class="col-sm-3 col-form-label mb-3">Harga Minuman</label>
-                    <div class="col-sm-7">
-                        <input value="{{ $minuman->harga_minuman }}" class="form-control" type="text"
-                            name="harga_minuman" placeholder="100000" required>
+
+                    <div class="mb-3 d-flex flex-sm-row flex-column align-items-start align-items-sm-center h-auto gap-2">
+                        <label class="form-label" style="width: 150px">Harga Minuman</label>
+                        <div class="w-100">
+                            <input value="{{ $minuman->harga_minuman }}" class="form-control" type="text"
+                                name="harga_minuman" placeholder="100000" required>
+                        </div>
                     </div>
-                    <label class="col-sm-3 col-form-label mb-3">Toko Minuman</label>
-                    <div class="col-sm-7">
-                        <input value="{{ $minuman->toko_minuman }}" class="form-control" type="text" name="toko_minuman"
-                            placeholder="bu siti" required>
+
+                    <div class="mb-3 d-flex flex-sm-row flex-column align-items-start align-items-sm-center h-auto gap-2">
+                        <label class="form-label" style="width: 150px">Toko Minuman</label>
+                        <div class="w-100">
+                            <input value="{{ $minuman->toko_minuman }}" class="form-control" type="text"
+                                name="toko_minuman" placeholder="bu siti" required>
+                        </div>
                     </div>
-                    <label class="col-sm-3 col-form-lable mb-5">Deskripsi</label>
-                    <div class="col-sm-7">
-                        <input value="{{ $minuman->deskripsi_minuman }}" class="form-control" type="text"
-                            name="deskripsi_minuman" placeholder="deskripsi">
+
+                    <div class="mb-3 d-flex flex-sm-row flex-column align-items-start align-items-sm-center h-auto gap-2">
+                        <label class="form-label" style="width: 150px">Deskripsi</label>
+                        <div class="w-100">
+                            <input value="{{ $minuman->deskripsi_minuman }}" class="form-control" type="text"
+                                name="deskripsi_minuman" placeholder="deskripsi">
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex flex-row justify-content-between">
+                <div class="d-flex flex-sm-row flex-column gap-2 justify-content-between">
                     <a class="btn btn-primary" href="{{ url('minuman') }}">Kembali</a>
                     <button class="btn btn-success" type="submit">Perbaharui</button>
                 </div>
             </form>
         </div>
-        <div class="my_card w-50">
+
+        <div class="my_card align-sm-baseline">
             <p class="text-center" style="color: red; font-size: 24px;">Perhatian</p>
             <p style="line-height: 1.8">Tata cara pengisian untuk menambahkan minuman baru :
                 <br> 1. Petugas harus menambah foto yang telah di berikan oleh penjual
