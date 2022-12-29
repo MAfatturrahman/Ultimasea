@@ -11,6 +11,7 @@ use App\Http\Controllers\MinumanController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\AuditController;
+use App\Http\Controllers\HomePageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,9 @@ use App\Http\Controllers\AuditController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -112,4 +113,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/audit', [AuditController::class, 'index'])->name('audit.index')->middleware('can:view-audit');
     Route::get('/audit/{id}', [AuditController::class, 'show'])->name('audit.show')->middleware('can:show-audit');
     //-------------------------------------------------------------------------------------------------
+});
+
+Route::get('/', function () {
+    return view('Frontend.homepage');
 });
