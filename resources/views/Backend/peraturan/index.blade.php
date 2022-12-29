@@ -25,7 +25,7 @@
             
                 $btnDelete = auth()
                     ->user()
-                    ->can()
+                    ->can('delete-peraturan')
                     ? '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>'
                     : '';
             
