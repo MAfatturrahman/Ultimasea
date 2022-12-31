@@ -118,3 +118,19 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/', function () {
     return view('Frontend.homepage');
 });
+
+Route::get('/makanan', function() {
+    return view('Frontend.makanan');
+});
+
+Route::get('/minuman', function() {
+    return view('Frontend.minuman');
+});
+
+Route::get('/fasilitas', function() {
+    return view('Frontend.fasilitas');
+});
+
+Route::get('/peraturan', function() {
+    return view('Frontend.peraturan');
+});
