@@ -1,11 +1,9 @@
 @extends('css.globalExtension')
-@extends('css.homePage')
+@extends('css.peraturanImg')
 @extends('Frontend.footer')
 
-<div class="gambarHomePage">
-    <div class="text-center">
-        <p>Selamat Datang Di Website UltimaSea</p>
-    </div>
+<div class="gambarPeraturan">
+    <p>Peraturan Yang Ada Di Ultimasea</p>
 </div>
 
 <div class="d-flex flex-wrap justify-content-center mt-4 gap-5">
@@ -47,31 +45,20 @@
 </div>
 
 <div class="judul mx-auto w-50 rounded-5 mt-5 mb-5 ">
-    <p class="text-center text-white">Halaman Utama</p>
+    <p class="text-center text-white">Halaman Peraturan</p>
 </div>
 
-<div class="d-flex flex-sm-row flex-column gap-4 mx-auto mb-4" style="width: 95%">
-    <div class="my_card mx-auto">
-        <div class="container">
-            <p class="judulCard text-center">Deskripsi</p>
-            <p>Selamat datang wahai pengunjung, tempat ini memiliki beberapa fitur yang dapat kalian jumpai beberapa
-                fiturnya yaitu dapat membeli makanan dan minuman dan juga kalian dapat membeli tiketnya di dalam website
-                ini juga
-                kalian juga dapat memesan pondok yang ada di samping kolam secara perjam setelah jamnya habs maka kalian
-                akan di usir secara paksa, jika kalian tidak mau maka mobil kalian akan di celupin,</p>
-        </div>
+<div class="my_card ms-4 me-4 mb-3 p-4">
+    <p> Ada juga larangan yang harus di taati oleh para pengunjung ultimasea, larangan larangan ini di buat untuk
+        melindunggi keamanan dan kenyamanan para pengunjung lainnya, aturan ini wajib di taati oleh para pengunjung,
+        jika tidak maka pengunjung yang melakukan kesalahan tersebut akan di berikan saksi berat sesuai dengan peraturan
+        yang telah mereka langgar, danjuga kami akan langsung bertindak pada saat itu juga berikut adalah peraturan yang
+        harus di taati oleh para penggunjung ultimasea :</p>
+    <div class="d-flex flex-sm-row flex-column flex-wrap justify-content-center gap-2">
+        @foreach ($peraturan as $item)
+            <p class="col-4 w-100">- {{ $item->nama_peraturan }}.</p>
+        @endforeach
     </div>
-
-    <div class="my_card mx-auto">
-        <div class="container">
-            <p class="judulCard text-center">Sejarah</p>
-            <p>Tempat ini pertama kali di bangun pada tahun 1900, pada awal mulanya tempat ini di jadikan tempat
-                pembuangan
-                mayat olah penjajah belanda dan di beli oleh seorang investor bernama fukron, pada awalnya fukron ingin
-                membuat tempat ini menjadi lapangan futsal tetapi karna adanya peluang yang lebih besar untuk menjual
-                batagor, oleh karna itu fukron menjualnya lagi pada orang kedua yang bernama sujidot, sujidot membelinya
-                kembali pada tahun 2004 dan sujidot merenofasinya secara besar besaran dan jadi lah ultima sea yang kita
-                kenal saat ini</p>
-        </div>
-    </div>
+    <p class="fw-bold fs-5 text-center">Ingatlah sesalu untuk menaati peraturan di mana pun dan kapanpun kamu berada
+        demi kebaikan orang lain</p>
 </div>

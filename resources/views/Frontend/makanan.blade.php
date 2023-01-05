@@ -1,11 +1,10 @@
 @extends('css.globalExtension')
-@extends('css.homePage')
+@extends('css.makananImg')
 @extends('Frontend.footer')
 
-<div class="gambarHomePage">
-    <div class="text-center">
-        <p>Selamat Datang Di Website UltimaSea</p>
-    </div>
+
+<div class="gambarMakanan">
+    <p>Beragam Makanan Yang Di Sediakan Oleh UltimaSea</p>
 </div>
 
 <div class="d-flex flex-wrap justify-content-center mt-4 gap-5">
@@ -47,31 +46,21 @@
 </div>
 
 <div class="judul mx-auto w-50 rounded-5 mt-5 mb-5 ">
-    <p class="text-center text-white">Halaman Utama</p>
+    <p class="text-center text-white">Halaman Makanan</p>
 </div>
 
-<div class="d-flex flex-sm-row flex-column gap-4 mx-auto mb-4" style="width: 95%">
-    <div class="my_card mx-auto">
-        <div class="container">
-            <p class="judulCard text-center">Deskripsi</p>
-            <p>Selamat datang wahai pengunjung, tempat ini memiliki beberapa fitur yang dapat kalian jumpai beberapa
-                fiturnya yaitu dapat membeli makanan dan minuman dan juga kalian dapat membeli tiketnya di dalam website
-                ini juga
-                kalian juga dapat memesan pondok yang ada di samping kolam secara perjam setelah jamnya habs maka kalian
-                akan di usir secara paksa, jika kalian tidak mau maka mobil kalian akan di celupin,</p>
+<div class="mb-3 d-flex flex-fill flex-wrap justify-content-center gap-4">
+    @foreach ($makanan as $item)
+        <div class="cardMakanan p-4 mx-auto">
+            <div class="card-body">
+                <img class="w-100 h-100" src="{{ $item->gambar_makanan }}">
+                <p class="fs-4 fw-bold">{{ $item->nama_makanan }}</p>
+                <p>{{ $item->deskripsi_makanan }}</p>
+                <p class="fw-bold">RP {{ $item->harga_makanan }}</p>
+                <div class="tombol text-center p-2 rounded-3">
+                    <a href="{{ route('makanan.showMakanan', $item->id) }}">Selengkapnya</a>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="my_card mx-auto">
-        <div class="container">
-            <p class="judulCard text-center">Sejarah</p>
-            <p>Tempat ini pertama kali di bangun pada tahun 1900, pada awal mulanya tempat ini di jadikan tempat
-                pembuangan
-                mayat olah penjajah belanda dan di beli oleh seorang investor bernama fukron, pada awalnya fukron ingin
-                membuat tempat ini menjadi lapangan futsal tetapi karna adanya peluang yang lebih besar untuk menjual
-                batagor, oleh karna itu fukron menjualnya lagi pada orang kedua yang bernama sujidot, sujidot membelinya
-                kembali pada tahun 2004 dan sujidot merenofasinya secara besar besaran dan jadi lah ultima sea yang kita
-                kenal saat ini</p>
-        </div>
-    </div>
+    @endforeach
 </div>

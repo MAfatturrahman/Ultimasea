@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('gambar_makanan');
             $table->string('nama_makanan');
             $table->integer('harga_makanan');
-            $table->string('deskripsi_makanan');
+            $table->string('deskripsi_makanan', 2000);
             $table->string('toko_makanan');
             $table->timestamps();
         });

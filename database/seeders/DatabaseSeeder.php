@@ -11,8 +11,14 @@ class DatabaseSeeder extends Seeder
     // Untuk memanggil dan menjalankanseeder yang lain
     public function run()
     {
-        $this->call(PermissionTableSeeder::class);
-        $this->call(RoleSeeder::class);
-        $this->call(UserSeeder::class);
+        $this->call([
+                FasilitasSeeder::class,
+                MakananSeeder::class,
+                MinumanSeeder::class,
+                PeraturanSeeder::class,
+                PermissionTableSeeder::class,
+                RoleSeeder::class,
+                UserSeeder::class,
+        ]);
     }
 }

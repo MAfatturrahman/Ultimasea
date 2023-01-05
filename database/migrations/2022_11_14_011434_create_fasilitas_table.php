@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('gambar_fasilitas');
             $table->string('nama_fasilitas');
             $table->string('status_fasilitas');
-            $table->string('deskripsi_fasilitas');
+            $table->string('deskripsi_fasilitas', 2000);
             $table->timestamps();
         });
     }

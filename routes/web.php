@@ -119,18 +119,12 @@ Route::get('/', function () {
     return view('Frontend.homepage');
 });
 
-Route::get('/makanan', function() {
-    return view('Frontend.makanan');
-});
+Route::get('/home/makanan', [MakananController::class, 'makanan']);
+Route::get('/home/makanan/{id}', [MakananController::class, 'showMakanan'])->name('makanan.showMakanan');
 
-Route::get('/minuman', function() {
-    return view('Frontend.minuman');
-});
+Route::get('/home/minuman', [MinumanController::class, 'minuman']);
+Route::get('/home/minuman/{id}', [MinumanController::class, 'showMinuman'])->name('minuman.showMinuman');
 
-Route::get('/fasilitas', function() {
-    return view('Frontend.fasilitas');
-});
+Route::get('/home/fasilitas', [FasilitasController::class, 'fasilitas']);
 
-Route::get('/peraturan', function() {
-    return view('Frontend.peraturan');
-});
+Route::get('/home/peraturan', [PeraturanController::class, 'peraturan']);

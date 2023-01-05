@@ -1,10 +1,11 @@
 @extends('css.globalExtension')
-@extends('css.homePage')
+@extends('css.fasilitasImg')
 @extends('Frontend.footer')
 
-<div class="gambarHomePage">
+
+<div class="gambarFasilitas">
     <div class="text-center">
-        <p>Selamat Datang Di Website UltimaSea</p>
+        <p>Fasilitas Apa Saja Yang Dimiliki Oleh UltimaSea?</p>
     </div>
 </div>
 
@@ -47,31 +48,24 @@
 </div>
 
 <div class="judul mx-auto w-50 rounded-5 mt-5 mb-5 ">
-    <p class="text-center text-white">Halaman Utama</p>
+    <p class="text-center text-white">Halaman Fasilitas</p>
 </div>
 
-<div class="d-flex flex-sm-row flex-column gap-4 mx-auto mb-4" style="width: 95%">
-    <div class="my_card mx-auto">
-        <div class="container">
-            <p class="judulCard text-center">Deskripsi</p>
-            <p>Selamat datang wahai pengunjung, tempat ini memiliki beberapa fitur yang dapat kalian jumpai beberapa
-                fiturnya yaitu dapat membeli makanan dan minuman dan juga kalian dapat membeli tiketnya di dalam website
-                ini juga
-                kalian juga dapat memesan pondok yang ada di samping kolam secara perjam setelah jamnya habs maka kalian
-                akan di usir secara paksa, jika kalian tidak mau maka mobil kalian akan di celupin,</p>
-        </div>
-    </div>
-
-    <div class="my_card mx-auto">
-        <div class="container">
-            <p class="judulCard text-center">Sejarah</p>
-            <p>Tempat ini pertama kali di bangun pada tahun 1900, pada awal mulanya tempat ini di jadikan tempat
-                pembuangan
-                mayat olah penjajah belanda dan di beli oleh seorang investor bernama fukron, pada awalnya fukron ingin
-                membuat tempat ini menjadi lapangan futsal tetapi karna adanya peluang yang lebih besar untuk menjual
-                batagor, oleh karna itu fukron menjualnya lagi pada orang kedua yang bernama sujidot, sujidot membelinya
-                kembali pada tahun 2004 dan sujidot merenofasinya secara besar besaran dan jadi lah ultima sea yang kita
-                kenal saat ini</p>
-        </div>
+<div class="background w-auto h-auto ps-3 pe-3 pt-3 pb-3">
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+        @foreach ($fasilitas as $item)
+            <div class="cardFasilitas p-4 mt-2 mb-4">
+                <div class="card-body">
+                    <img class="w-100 h-100" src="{{ $item->gambar_fasilitas }}">
+                    <p class="fs-3">{{ $item->nama_fasilitas }}</p>
+                    <p>{{ $item->deskripsi_fasilitas }}</p>
+                    @if ($item->status_fasilitas == 'Aktif')
+                        <p class="text-center text-primary fs-5">{{ $item->status_fasilitas }}</p>
+                    @else
+                        <p class="text-center text-danger fs-5">{{ $item->status_fasilitas }}</p>
+                    @endif
+                </div>
+            </div>
+        @endforeach
     </div>
 </div>

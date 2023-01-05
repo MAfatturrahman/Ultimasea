@@ -66,4 +66,16 @@ class PeraturanController extends Controller
         $peraturan = Peraturan::find($id)->delete();
         return redirect()->routes('peraturan.index')->with('alert', 'Data Peraturan Berhasil di Hapus');
     }
+
+    // Untuk memanggil halaman peraturan (Halaman User)
+    public function peraturan()
+    {
+        $peraturan = Peraturan::all();
+        return view(
+            'Frontend.peraturan',
+            compact(
+                'peraturan'
+            )
+        );
+    }
 }

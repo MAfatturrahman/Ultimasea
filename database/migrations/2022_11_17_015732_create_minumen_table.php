@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('gambar_minuman');
             $table->string('nama_minuman');
             $table->integer('harga_minuman');
-            $table->string('deskripsi_minuman');
+            $table->string('deskripsi_minuman', 2000);
             $table->string('toko_minuman');
             $table->timestamps();
         });

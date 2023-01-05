@@ -1,4 +1,4 @@
-<div class="footer mt-5 text-white h-auto p-5">
+<div class="footer text-white h-auto ps-5 pe-5 pt-5 pb-1">
     <div class="d-flex flex-sm-row flex-column gap-5">
         <div class="d-flex flex-sm-column flex-column lh-sm gap-1">
             <p class="fs-3">UltimaSea Office</p>
@@ -21,5 +21,5 @@
             <a href="https://www.tiktok.com/"><i class="brand fa-brands fa-tiktok fa-3x"></i></a>
         </div>
     </div>
-    <p class="text-center mt-3">Copyright ©2022 by UltimaSea</p>
+    <p class="text-center">Copyright ©2022 by UltimaSea</p>
 </div>

@@ -79,4 +79,13 @@ class FasilitasController extends Controller
         $fasilitas = Fasilitas::find($id)->delete();
         return redirect()->route('fasilitas.index')->with('alert', 'Data Fasilitas Berhasil di Hapus');
     }
+
+    public function fasilitas()
+    {
+        $fasilitas = Fasilitas::all();
+        return view('Frontend.fasilitas', compact(
+            'fasilitas'
+        )
+        );
+    }
 }

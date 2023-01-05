@@ -81,4 +81,29 @@ class MinumanController extends Controller
         $minuman = Minuman::find($id)->delete();
         return redirect()->route('minuman.index')->with('alert', 'Data Minuman Berhasil di Hapus');
     }
+
+    // Untuk memanggil halaman minuman(Halaman User)
+    public function minuman()
+    {
+        $minuman = Minuman::all();
+        return view(
+            'Frontend.minuman',
+            compact(
+                'minuman'
+            )
+        );
+    }
+
+    public function showMinuman($id)
+    {
+        $itemMinuman = Minuman::all();
+        $minuman = Minuman::find($id);
+        return view(
+            'Frontend.showMinuman',
+            compact(
+                'minuman',
+                'itemMinuman'
+            )
+        );
+    }
 }

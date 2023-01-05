@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Makanan;
+use Illuminate\Support\Facades\Auth;
 
 class MakananController extends Controller
 {
@@ -80,5 +81,30 @@ class MakananController extends Controller
     {
         $makanan = Makanan::find($id)->delete();
         return redirect()->route('makanan.index')->with('alert', 'Data Makanan Berhasil di Hapus');
+    }
+
+    // Untuk memanggil halaman makanan(Halaman User)
+    public function makanan()
+    {
+        $makanan = Makanan::all();
+        return view(
+            'Frontend.makanan',
+            compact(
+                'makanan'
+            )
+        );
+    }
+
+    public function showMakanan($id)
+    {
+        $itemMakanan = Makanan::all();
+        $makanan = Makanan::find($id);
+        return view(
+            'Frontend.showMakanan',
+            compact(
+                'makanan',
+                'itemMakanan'
+            )
+        );
     }
 }
